@@ -16,9 +16,9 @@ credentials (username: "admin" / password: "123456"). A successful login redirec
 to a Welcome page. The unsuccessful one redisplays the form with validation and/or
 login error messages. The project does not use database.
 
-YouTube Video:
+YouTube Video: [unlisted]
 
-[YouTube URL]
+https://youtu.be/Cd6kGw1c0yU
 
 
 Technologies Used:
