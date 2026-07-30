@@ -8,8 +8,6 @@ namespace Webly.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            ViewData["Title"] = "Login";
-            ViewData["AppName"] = "Webly";
             return View();
         }
 

@@ -8,15 +8,11 @@ public class HomeController : Controller
 {
     public IActionResult Index()
     {
-        ViewData["Title"] = "Home";
-        ViewData["AppName"] = "Webly";
         return View();
     }
 
     public IActionResult Privacy()
     {
-        ViewData["Title"] = "Privacy";
-        ViewData["AppName"] = "Webly";
         return View();
     }
 

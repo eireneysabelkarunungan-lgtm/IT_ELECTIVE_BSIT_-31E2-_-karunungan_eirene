@@ -1,21 +1,50 @@
 @model Webly.Models.LoginView
 
-<h1>Login</h1>
+@{
+    Layout = null;
+    ViewData["Title"] = "Sign in";
+}
 
-<form asp-action="Login" method="post">
-    <div asp-validation-summary="ModelOnly"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Webly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/auth.css" asp-append-version="true" />
+</head>
+<body class="auth-body">
+    <div class="auth-card">
+        <p class="eyebrow">Webly &middot; account access</p>
+        <h1>Sign in</h1>
+        <p class="sub">Please sign in to your account to continue.</p>
 
-    <div>
-        <label asp-for="Username"></label>
-        <input asp-for="Username" />
-        <span asp-validation-for="Username"></span>
+        <form asp-action="Login" method="post" novalidate class="auth-form">
+            <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+
+            <div class="field">
+                <label asp-for="Username">Username</label>
+                <input asp-for="Username" autocomplete="username" placeholder="admin" />
+                <span asp-validation-for="Username" class="field-error"></span>
+            </div>
+
+            <div class="field">
+                <label asp-for="Password">Password</label>
+                <input asp-for="Password" type="password" autocomplete="current-password" placeholder="••••••••" />
+                <span asp-validation-for="Password" class="field-error"></span>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Sign in <span class="arrow" aria-hidden="true">&rarr;</span>
+            </button>
+        </form>
     </div>
-    <br />
-    <div>
-        <label asp-for="Password"></label>
-        <input asp-for="Password" type="password" />
-        <span asp-validation-for="Password"></span>
-    </div>
-    <br />
-    <button type="submit">Login</button>
-</form>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>
