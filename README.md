@@ -12,7 +12,7 @@ Data Annotation validation, and controller-based form handling through a login
 page. The user enters a username and password on the Login page, then the submitted
 form data is automatically bound to a LoginView model, validated using Data
 Annotations and ModelState.IsValid, and is checked against hard-coded
-credentials (username: "admin" / password: "123456"). A successful login redirects the user 
+credentials **(username: "admin" / password: "123456")**. A successful login redirects the user 
 to a Welcome page. The unsuccessful one redisplays the form with validation and/or
 login error messages. The project does not use database.
 
